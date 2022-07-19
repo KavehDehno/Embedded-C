@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="PreviewPatchPage">
+		<item key="expandPatchOptions" value="true"/>
+		<item key="generateRejects" value="false"/>
+	</section>
+	<section name="PatchWizard">
+		<item key="PatchWizardPage1.INPUT_METHOD" value="2"/>
+		<item key="PatchWizardPage1.PATCH_FILES" value="G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\Patch\FreeRTOSv202012.00\FreeRTOSv202012.00_segger_cm7_v1.patch"/>
+		<item key="PatchWizardPage1.WORKSPACE_PATH" value=""/>
+		<item key="DIALOG_X_ORIGIN" value="680"/>
+		<item key="DIALOG_Y_ORIGIN" value="25"/>
+		<item key="DIALOG_WIDTH" value="716"/>
+		<item key="DIALOG_HEIGHT" value="714"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<list key="PatchWizardPage1.PATCH_FILES">
+			<item value="G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\Patch\FreeRTOSv202012.00\FreeRTOSv202012.00_segger_cm7_v1.patch"/>
+			<item value="G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\Patch\FreeRTOSv202012.00_segger_cm7_v1.patch"/>
+			<item value="G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGERv330\Patch\FreeRTOSv202012.00\FreeRTOSv202012.00_segger_cm7_v1.patch"/>
+			<item value="G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\Patch\FreeRTOSV10\FreeRTOSv202012.00_segger_cm7_v1.patch"/>
+			<item value="G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\FreeRTOS_HelloWorld\ThirdParty\SEGGER\Patch\FreeRTOSV10\FreeRTOSV10_Core.patch"/>
+		</list>
+		<list key="PatchWizardPage1.PATCH_URLS">
+			<item value=""/>
+		</list>
+	</section>
+</section>

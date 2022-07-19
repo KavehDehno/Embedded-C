@@ -1,0 +1,11 @@
+07:41:16 **** Incremental Build of configuration Debug for project FreeRTOS_3_LEDs ****
+make -j8 all 
+arm-none-eabi-gcc -o "FreeRTOS_3_LEDs.elf" @"objects.list"   -mcpu=cortex-m7 -T"G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\FreeRTOS_3_LEDs\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_3_LEDs.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.8.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/stm32h7xx_hal_msp.o: in function `HAL_MspInit':
+G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/FreeRTOS_3_LEDs/Debug/../Core/Src/stm32h7xx_hal_msp.c:76: undefined reference to `vInitPrioGroupValue'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:71: FreeRTOS_3_LEDs.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+07:41:20 Build Failed. 3 errors, 0 warnings. (took 4s.296ms)
+

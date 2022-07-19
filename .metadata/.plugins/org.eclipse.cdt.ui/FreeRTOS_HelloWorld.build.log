@@ -1,0 +1,10 @@
+13:52:58 **** Build of configuration Debug for project FreeRTOS_HelloWorld ****
+make -j8 all 
+arm-none-eabi-size   FreeRTOS_HelloWorld.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35644	    136	  28544	  64324	   fb44	FreeRTOS_HelloWorld.elf
+Finished building: default.size.stdout
+ 
+
+13:52:59 Build Finished. 0 errors, 0 warnings. (took 1s.581ms)
+

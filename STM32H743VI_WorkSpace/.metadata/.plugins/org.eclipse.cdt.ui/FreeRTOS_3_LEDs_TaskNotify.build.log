@@ -1,0 +1,10 @@
+12:09:26 **** Incremental Build of configuration Debug for project FreeRTOS_3_LEDs_TaskNotify ****
+make -j8 all 
+arm-none-eabi-size   FreeRTOS_3_LEDs_TaskNotify.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44564	     44	  26252	  70860	  114cc	FreeRTOS_3_LEDs_TaskNotify.elf
+Finished building: default.size.stdout
+ 
+
+12:09:27 Build Finished. 0 errors, 0 warnings. (took 217ms)
+

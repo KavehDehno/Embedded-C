@@ -1,0 +1,8 @@
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:118:13:_StartSysView	8	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:127:13:_cbOnUARTRx	16	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:138:12:_cbOnUARTTx	8	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:165:6:HIF_UART_WaitForTxEnd	0	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:186:6:USART2_IRQHandler	16	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:224:6:HIF_UART_EnableTXEInterrupt	0	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:234:6:HIF_UART_Init	8	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Recorder/segger_uart.c:155:6:SEGGER_UART_init	8	static

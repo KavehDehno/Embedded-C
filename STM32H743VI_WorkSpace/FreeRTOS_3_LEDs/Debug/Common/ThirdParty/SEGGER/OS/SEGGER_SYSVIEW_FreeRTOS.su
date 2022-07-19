@@ -1,0 +1,6 @@
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.c:104:12:_cbGetTime	8	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.c:187:6:SYSVIEW_DeleteTask	12	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.c:228:6:SYSVIEW_SendTaskInfo	32	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.c:126:6:SYSVIEW_AddTask	32	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.c:156:6:SYSVIEW_UpdateTask	32	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.c:84:13:_cbSendTaskList	24	static

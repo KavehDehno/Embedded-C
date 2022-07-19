@@ -1,0 +1,15 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_Templete,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs_TaskNotify2,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs_Button_ISR
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs_Button_ISR\ (1)/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs_Button_ISR\ (1)/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs_Button_ISR/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs_Button_ISR/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_3_LEDs_TaskNotify2/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_HelloWorld/activeLaunchMode=run

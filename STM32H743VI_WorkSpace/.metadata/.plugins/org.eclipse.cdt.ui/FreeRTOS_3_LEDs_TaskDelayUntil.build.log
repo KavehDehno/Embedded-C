@@ -1,0 +1,10 @@
+12:09:41 **** Incremental Build of configuration Debug for project FreeRTOS_3_LEDs_TaskDelayUntil ****
+make -j8 all 
+arm-none-eabi-size   FreeRTOS_3_LEDs_TaskDelayUntil.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41964	     44	  26228	  68236	  10a8c	FreeRTOS_3_LEDs_TaskDelayUntil.elf
+Finished building: default.size.stdout
+ 
+
+12:09:42 Build Finished. 0 errors, 0 warnings. (took 280ms)
+
