@@ -1,7 +1,7 @@
 Common/ThirdParty/FreeRTOS/queue.o: \
  D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/queue.c \
  D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/include/FreeRTOS.h \
- D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/FreeRTOSConfig.h \
+ ../Core/Inc/FreeRTOSConfig.h \
  D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h \
  D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW.h \
  D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/SEGGER/SEGGER.h \
@@ -19,7 +19,7 @@ Common/ThirdParty/FreeRTOS/queue.o: \
  D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/include/queue.h \
  D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/include/task.h
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/include/FreeRTOS.h:
-D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/FreeRTOSConfig.h:
+../Core/Inc/FreeRTOSConfig.h:
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h:
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/SEGGER/SEGGER_SYSVIEW.h:
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/SEGGER/SEGGER.h:

@@ -84,15 +84,10 @@
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.objcopy.symbolsrec.1943428340" name="MCU Output Converter Motorola S-rec with symbols" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.objcopy.symbolsrec"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.164798198.1798848909" name="segger_uart_STM_M4.c" rcbsApplicability="disable" resourcePath="Common/ThirdParty/SEGGER/Recorder/segger_uart_STM_M4.c" toolsToInvoke="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1547059542.1128107166">
-						<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1547059542.1128107166" name="MCU GCC Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.1547059542">
-							<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.625030387" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
-						</tool>
-					</fileInfo>
 					<sourceEntries>
-						<entry excluding="ThirdParty/SEGGER/Recorder/segger_uart_STM_M4.c|ThirdParty/SEGGER/Recorder/segger_uart_M7_USART3.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Common"/>
 						<entry excluding="Src/sysmem.c|Src/syscalls.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry excluding="STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex (1).c|STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart (1).c|STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan (1).c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry excluding="ThirdParty/SEGGER/Recorder/segger_uart_STM_M4.c|ThirdParty/SEGGER/Recorder/segger_uart_M7_USART3.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Common"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

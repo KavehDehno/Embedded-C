@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="HEAP"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="heap"/>
+			<item value="heap_stack"/>
+			<item value="RAM_D1"/>
+			<item value="LED_Task"/>
+			<item value="RTC_Task"/>
+			<item value="while (1)"/>
+			<item value="lenghtght"/>
+			<item value="len"/>
+			<item value="sRtcMenu"/>
+			<item value="curr_state"/>
+			<item value="ucQueueType"/>
 			<item value="HighWaterMark"/>
 			<item value="enter"/>
 			<item value="trace"/>
 			<item value="Printf"/>
-			<item value="SEGGER_RTT_"/>
-			<item value="SYSVIEW_BUFFER_SECTION"/>
-			<item value="64u"/>
-			<item value="BUFFER"/>
-			<item value="vPortEnterCritical"/>
-			<item value="HIF_UART_WaitForTxEnd"/>
-			<item value="HIF_UART_EnableTXEInterrupt"/>
-			<item value="huart2"/>
 		</list>
 		<list key="replacehistory">
+			<item value="lenght"/>
+			<item value="sRTCMenu"/>
+			<item value="current_state"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

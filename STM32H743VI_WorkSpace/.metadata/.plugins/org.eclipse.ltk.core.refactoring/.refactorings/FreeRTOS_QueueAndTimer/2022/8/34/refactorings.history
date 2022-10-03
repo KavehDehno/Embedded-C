@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FreeRTOS_QueueAndTimer/Core/Src/Task_handl.c&apos; to &apos;Task_handler.c&apos;" description="Rename resource &apos;Task_handl.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/Task_handl.c" name="Task_handler.c" stamp="1660654768685" updateReferences="true"/>
+</session>

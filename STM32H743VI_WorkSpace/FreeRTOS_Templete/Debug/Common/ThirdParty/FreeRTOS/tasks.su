@@ -21,6 +21,8 @@ D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/Th
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2363:12:xTaskGetTickCountFromISR	16	static
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2394:13:uxTaskGetNumberOfTasks	4	static
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2402:8:pcTaskGetName	24	static,ignoring_inline_asm
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2416:20:prvSearchForNameWithinSingleList	48	static
+D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2485:18:xTaskGetHandle	32	static,ignoring_inline_asm
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2549:17:uxTaskGetSystemState	32	static
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2624:18:xTaskGetIdleTaskHandle	16	static,ignoring_inline_asm
 D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/tasks.c:2654:12:xTaskCatchUpTicks	24	static,ignoring_inline_asm

@@ -1,0 +1,184 @@
+#include "main.h"
+
+int extract_command(command_t *cmd);
+void process_Command(command_t	*cmd);
+
+const char *msg_inv = "////Invalid option////\n";
+
+void Menu_Task(void *param)
+{
+	uint32_t cmd_addr;
+
+	command_t *cmd;
+
+	int option;
+
+	const char* msg_menu = "\n========================\n"
+							"|         Menu         |\n"
+							"========================\n"
+								"LED effect    ----> 0\n"
+								"Date and time ----> 1\n"
+								"Exit          ----> 2\n"
+								"Enter your choice here : ";
+
+	while(1){
+		xQueueSend(q_Print,&msg_menu,portMAX_DELAY);
+
+		//wait for menu commands
+		xTaskNotifyWait(0,0,&cmd_addr,portMAX_DELAY);
+		cmd = (command_t*)cmd_addr;
+
+		if(cmd->lenght == 1)
+		{
+			option = cmd->payload[0] - 48;
+			switch(option)
+			{
+				case 0:
+					current_state = sLEDEffect;
+					xTaskNotify(LED_Task_Handle,0,eNoAction);
+					break;
+				case 1:
+					current_state = sRTCMenu;
+					xTaskNotify(RTC_Task_Handle,0,eNoAction);
+					break;
+				case 2: /*implement exit */
+					break;
+				default:
+					xQueueSend(q_Print,&msg_inv,portMAX_DELAY);
+					continue;
+			}
+
+		}else{
+			//invalid entry
+			xQueueSend(q_Print,&msg_inv,portMAX_DELAY);
+			continue;
+		}
+
+
+		//wait to run again when some other task notifies
+		xTaskNotifyWait(0,0,NULL,portMAX_DELAY);
+
+	}//while super loop
+}
+
+void LED_Task(void *param)
+{
+	uint32_t cmd_addr;
+	command_t *cmd;
+	const char* msg_led = "========================\n"
+						  "|      LED Effect     |\n"
+						  "========================\n"
+						  "(none,e1,e2,e3,e4)\n"
+						  "Enter your choice here : ";
+
+	while(1){
+		/*Wait for notification (Notify wait) */
+		xTaskNotifyWait(0,0,NULL,portMAX_DELAY);
+
+		/*Print LED menu */
+		xQueueSend(q_Print,&msg_led,portMAX_DELAY);
+
+		/*wait for LED command (Notify wait) */
+		xTaskNotifyWait(0,0,&cmd_addr,portMAX_DELAY);
+		cmd = (command_t*)cmd_addr;
+
+		if(cmd->lenght <= 4)
+		{
+			if(! strcmp((char*)cmd->payload,"none"))
+				led_effect_stop();
+			else if (! strcmp((char*)cmd->payload,"e1"))
+				led_effect(1);
+			else if (! strcmp((char*)cmd->payload,"e2"))
+				led_effect(2);
+			else if (! strcmp((char*)cmd->payload,"e3"))
+				led_effect(3);
+			else if (! strcmp((char*)cmd->payload,"e4"))
+				led_effect(4);
+			else
+				xQueueSend(q_Print,&msg_inv,portMAX_DELAY); /*print invalid message */
+		}else
+			xQueueSend(q_Print,&msg_inv,portMAX_DELAY);
+
+		/* update state variable */
+		current_state = sMainMenu;
+
+		/*Notify menu task */
+		xTaskNotify(Menu_Task_Handle,0,eNoAction);
+
+	}
+}
+
+void RTC_Task(void *param)
+{
+	while(1)
+	{
+
+	}
+}
+
+void Print_Task(void *param)
+{
+	while(1)
+	{
+
+	}
+}
+
+void CommandHanding_Task(void *param)
+{
+	BaseType_t	Retunred_Val;
+	command_t	Command;
+
+	while(1)
+	{
+		// Wait indefinitely and capture return value if it receives notification from call back
+		Retunred_Val = xTaskNotifyWait(0, 0, NULL, portMAX_DELAY);
+		if(Retunred_Val == pdTRUE)
+		{
+			// Process user input stored in the input queue
+			process_Command(&Command);
+		}
+	}
+}
+
+void process_Command(command_t	*cmd)
+{
+	extract_command(cmd);
+
+	switch(current_state)
+	{
+		case	sMainMenu:
+			xTaskNotify(Menu_Task_Handle, (uint32_t)cmd, eSetValueWithOverwrite);
+			break;
+		case	sLEDEffect:
+			xTaskNotify(LED_Task_Handle, (uint32_t)cmd, eSetValueWithOverwrite);
+			break;
+		case	sRTCMenu:
+		case	sRTCTimeConfig:
+		case	sRTCDateConfig:
+		case	sRTCReport:
+			xTaskNotify(RTC_Task_Handle, (uint32_t)cmd, eSetValueWithOverwrite);
+			break;
+	}
+}
+
+
+int extract_command(command_t *cmd)
+{
+	uint8_t item;
+	BaseType_t status;
+
+	status = uxQueueMessagesWaiting(q_Data);
+	if(!status) return -1;
+	uint8_t i=0;
+
+	do
+	{
+		status = xQueueReceive(q_Data, &time, 0);
+		if(status == pdTRUE)	cmd->payload[i++] = item;
+	}while(item != '\n');
+	cmd->payload[i-1] = '\0';
+	cmd->lenght = i-1;	/* Saving length of the command excluding null char*/
+
+	return 0;
+}

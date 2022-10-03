@@ -1,0 +1,11 @@
+../Core/Src/main.c:73:5:main	48	static,ignoring_inline_asm
+../Core/Src/main.c:167:6:SystemClock_Config	128	static
+../Core/Src/main.c:231:13:MX_FDCAN2_Init	8	static
+../Core/Src/main.c:284:13:MX_USB_OTG_FS_HCD_Init	8	static
+../Core/Src/main.c:315:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:348:13:Task_GreenLED_Handler	24	static,ignoring_inline_asm
+../Core/Src/main.c:370:13:Task_RedLED_Handler	24	static,ignoring_inline_asm
+../Core/Src/main.c:393:13:Task_BlueLED_Handler	24	static,ignoring_inline_asm
+../Core/Src/main.c:415:6:vApplicationIdleHook	8	static
+../Core/Src/main.c:430:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:447:6:Error_Handler	8	static,ignoring_inline_asm

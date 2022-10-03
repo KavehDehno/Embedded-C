@@ -20,7 +20,6 @@
 "./Core/Src/stm32h7xx_hal_timebase_tim.o"
 "./Core/Src/stm32h7xx_it.o"
 "./Core/Src/syscalls.o"
-"./Core/Src/sysmem.o"
 "./Core/Src/system_stm32h7xx.o"
 "./Core/Startup/startup_stm32h743vitx.o"
 "./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o"
