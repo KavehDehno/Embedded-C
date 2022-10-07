@@ -422,7 +422,6 @@ static void MX_GPIO_Init(void)
 void vTask1( void *pvParameters )
 {
 	const char *pcTaskName = "Task 1 is running\r\n";
-	static int Flag = 1;
 
 	/* As per most tasks, this task is implemented in an infinite loop. */
 	for( ;; )
@@ -453,7 +452,6 @@ void vTask2( void *pvParameters )
 {
 
 	const char *pcTaskName = "Task 2 is running\r\n";
-	static int Flag = 1;
 
 	/* As per most tasks, this task is implemented in an infinite loop. */
 	for( ;; )
