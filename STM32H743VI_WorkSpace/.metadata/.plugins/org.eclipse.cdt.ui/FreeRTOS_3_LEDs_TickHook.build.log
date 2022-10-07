@@ -1,17 +1,10 @@
-06:14:40 **** Incremental Build of configuration Debug for project FreeRTOS_3_LEDs_TickHook ****
+08:34:20 **** Build of configuration Debug for project FreeRTOS_3_LEDs_TickHook ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/STM32H743VI/Common/ThirdParty/FreeRTOS/include" -I"G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/STM32H743VI/Common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM7" -I"G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/STM32H743VI/Common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM7/r0p1" -I"G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/STM32H743VI/Common/ThirdParty/SEGGER/Config" -I"G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/STM32H743VI/Common/ThirdParty/SEGGER/OS" -I"G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/STM32H743VI/Common/ThirdParty/SEGGER/SEGGER" -I"G:/My Drive/Transfer/Proj/FreeRTOS/RTOS_Workspace/STM32H743VI/Common/ThirdParty/SEGGER/Recorder" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "FreeRTOS_3_LEDs_TickHook.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\FreeRTOS_3_LEDs_TickHook\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_3_LEDs_TickHook.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: FreeRTOS_3_LEDs_TickHook.elf
- 
 arm-none-eabi-size   FreeRTOS_3_LEDs_TickHook.elf 
-arm-none-eabi-objdump -h -S  FreeRTOS_3_LEDs_TickHook.elf  > "FreeRTOS_3_LEDs_TickHook.list"
    text	   data	    bss	    dec	    hex	filename
   36184	     40	 523752	 559976	  88b68	FreeRTOS_3_LEDs_TickHook.elf
 Finished building: default.size.stdout
  
-Finished building: FreeRTOS_3_LEDs_TickHook.list
- 
 
-06:14:43 Build Finished. 0 errors, 0 warnings. (took 2s.542ms)
+08:34:20 Build Finished. 0 errors, 0 warnings. (took 300ms)
 

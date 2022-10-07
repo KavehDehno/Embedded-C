@@ -1,4 +1,4 @@
-06:55:02 **** Build of configuration Debug for project FreeRTOS_3_LEDs_Button_ISR ****
+08:34:15 **** Build of configuration Debug for project FreeRTOS_3_LEDs_Button_ISR ****
 make -j8 all 
 arm-none-eabi-size   FreeRTOS_3_LEDs_Button_ISR.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   FreeRTOS_3_LEDs_Button_ISR.elf
 Finished building: default.size.stdout
  
 
-06:55:02 Build Finished. 0 errors, 0 warnings. (took 295ms)
+08:34:15 Build Finished. 0 errors, 0 warnings. (took 286ms)
 

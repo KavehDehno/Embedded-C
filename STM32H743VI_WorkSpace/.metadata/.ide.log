@@ -22066,3 +22066,10 @@ parser evaluation:
 2022-10-03 05:58:36,269 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
 2022-10-03 05:58:36,270 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 2022-10-03 06:21:36,188 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2022-10-06 21:12:53,035 [INFO] Activator:177 - 
+
+
+2022-10-06 21:12:53,036 [INFO] Activator:178 - !SESSION log4j initialized
+2022-10-07 06:49:41,142 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2022-10-07 06:49:41,146 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2022-10-07 06:49:41,148 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.

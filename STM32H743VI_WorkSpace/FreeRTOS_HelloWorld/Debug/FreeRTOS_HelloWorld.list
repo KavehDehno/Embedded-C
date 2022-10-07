@@ -17,9 +17,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   6 .data         00000084  24000000  08008e50  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .bss          0007d584  24000084  08008ed4  00020084  2**2
+  7 .bss          0007f584  24000084  08008ed4  00020084  2**2
                   ALLOC
-  8 ._user_heap_stack 00000600  2407d608  08008ed4  0002d608  2**0
+  8 ._user_heap_stack 00000600  2407f608  08008ed4  0002f608  2**0
                   ALLOC
   9 .ARM.attributes 0000002e  00000000  00000000  00020084  2**0
                   CONTENTS, READONLY
@@ -240,7 +240,7 @@ _Case3:
         BX       LR                              // Return 0
  800036e:	4770      	bx	lr
         LDR.W    R0,=_SEGGER_RTT                 // pRing = &_SEGGER_RTT.aUp[BufferIndex];
- 8000370:	240052a0 	.word	0x240052a0
+ 8000370:	240072a0 	.word	0x240072a0
 
 08000374 <strlen>:
  8000374:	4603      	mov	r3, r0
@@ -3477,12 +3477,12 @@ void * pvPortMalloc( size_t xWantedSize )
  80015f6:	46bd      	mov	sp, r7
  80015f8:	bd80      	pop	{r7, pc}
  80015fa:	bf00      	nop
- 80015fc:	240051dc 	.word	0x240051dc
- 8001600:	240051f0 	.word	0x240051f0
- 8001604:	240051e0 	.word	0x240051e0
- 8001608:	240051d4 	.word	0x240051d4
- 800160c:	240051e4 	.word	0x240051e4
- 8001610:	240051e8 	.word	0x240051e8
+ 80015fc:	240071dc 	.word	0x240071dc
+ 8001600:	240071f0 	.word	0x240071f0
+ 8001604:	240071e0 	.word	0x240071e0
+ 8001608:	240071d4 	.word	0x240071d4
+ 800160c:	240071e4 	.word	0x240071e4
+ 8001610:	240071e8 	.word	0x240071e8
 
 08001614 <vPortFree>:
 /*-----------------------------------------------------------*/
@@ -3617,9 +3617,9 @@ void vPortFree( void * pv )
  80016ce:	46bd      	mov	sp, r7
  80016d0:	bd80      	pop	{r7, pc}
  80016d2:	bf00      	nop
- 80016d4:	240051f0 	.word	0x240051f0
- 80016d8:	240051e0 	.word	0x240051e0
- 80016dc:	240051ec 	.word	0x240051ec
+ 80016d4:	240071f0 	.word	0x240071f0
+ 80016d8:	240071e0 	.word	0x240071e0
+ 80016dc:	240071ec 	.word	0x240071ec
 
 080016e0 <prvHeapInit>:
     /* This just exists to keep the linker quiet. */
@@ -3635,7 +3635,7 @@ static void prvHeapInit( void ) /* PRIVILEGED_FUNCTION */
     uint8_t * pucAlignedHeap;
     size_t uxAddress;
     size_t xTotalHeapSize = configTOTAL_HEAP_SIZE;
- 80016e6:	f44f 43a0 	mov.w	r3, #20480	; 0x5000
+ 80016e6:	f44f 43e0 	mov.w	r3, #28672	; 0x7000
  80016ea:	60bb      	str	r3, [r7, #8]
 
     /* Ensure the heap starts on a correctly aligned boundary. */
@@ -3753,11 +3753,11 @@ static void prvHeapInit( void ) /* PRIVILEGED_FUNCTION */
  8001786:	f85d 7b04 	ldr.w	r7, [sp], #4
  800178a:	4770      	bx	lr
  800178c:	240001d4 	.word	0x240001d4
- 8001790:	240051d4 	.word	0x240051d4
- 8001794:	240051dc 	.word	0x240051dc
- 8001798:	240051e4 	.word	0x240051e4
- 800179c:	240051e0 	.word	0x240051e0
- 80017a0:	240051f0 	.word	0x240051f0
+ 8001790:	240071d4 	.word	0x240071d4
+ 8001794:	240071dc 	.word	0x240071dc
+ 8001798:	240071e4 	.word	0x240071e4
+ 800179c:	240071e0 	.word	0x240071e0
+ 80017a0:	240071f0 	.word	0x240071f0
 
 080017a4 <prvInsertBlockIntoFreeList>:
 /*-----------------------------------------------------------*/
@@ -3903,8 +3903,8 @@ static void prvInsertBlockIntoFreeList( BlockLink_t * pxBlockToInsert ) /* PRIVI
  8001848:	f85d 7b04 	ldr.w	r7, [sp], #4
  800184c:	4770      	bx	lr
  800184e:	bf00      	nop
- 8001850:	240051d4 	.word	0x240051d4
- 8001854:	240051dc 	.word	0x240051dc
+ 8001850:	240071d4 	.word	0x240071d4
+ 8001854:	240071dc 	.word	0x240071dc
 
 08001858 <_cbSendSystemDesc>:
 *       _cbSendSystemDesc()
@@ -4039,8 +4039,8 @@ static void _cbSendTaskList(void) {
  8001922:	370c      	adds	r7, #12
  8001924:	46bd      	mov	sp, r7
  8001926:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 8001928:	240051f4 	.word	0x240051f4
- 800192c:	24005294 	.word	0x24005294
+ 8001928:	240071f4 	.word	0x240071f4
+ 800192c:	24007294 	.word	0x24007294
 
 08001930 <_cbGetTime>:
 *  Function description
@@ -4225,9 +4225,9 @@ void SYSVIEW_AddTask(U32 xHandle, const char* pcTaskName, unsigned uxCurrentPrio
  8001a74:	bd80      	pop	{r7, pc}
  8001a76:	bf00      	nop
  8001a78:	08008cac 	.word	0x08008cac
- 8001a7c:	24005294 	.word	0x24005294
+ 8001a7c:	24007294 	.word	0x24007294
  8001a80:	08008cb4 	.word	0x08008cb4
- 8001a84:	240051f4 	.word	0x240051f4
+ 8001a84:	240071f4 	.word	0x240071f4
 
 08001a88 <SYSVIEW_SendTaskInfo>:
 *       SYSVIEW_SendTaskInfo()
@@ -4379,8 +4379,8 @@ void USART2_IRQHandler(void) {
  8001b4a:	bd80      	pop	{r7, pc}
  8001b4c:	4000441c 	.word	0x4000441c
  8001b50:	40004424 	.word	0x40004424
- 8001b54:	24005298 	.word	0x24005298
- 8001b58:	2400529c 	.word	0x2400529c
+ 8001b54:	24007298 	.word	0x24007298
+ 8001b58:	2400729c 	.word	0x2400729c
  8001b5c:	40004400 	.word	0x40004400
  8001b60:	40004428 	.word	0x40004428
 
@@ -4528,10 +4528,10 @@ static void _DoInit(void) {
  8001c1e:	3708      	adds	r7, #8
  8001c20:	46bd      	mov	sp, r7
  8001c22:	bd80      	pop	{r7, pc}
- 8001c24:	240052a0 	.word	0x240052a0
+ 8001c24:	240072a0 	.word	0x240072a0
  8001c28:	08008d04 	.word	0x08008d04
- 8001c2c:	24005348 	.word	0x24005348
- 8001c30:	24005748 	.word	0x24005748
+ 8001c2c:	24007348 	.word	0x24007348
+ 8001c30:	24007748 	.word	0x24007748
  8001c34:	08008d84 	.word	0x08008d84
 
 08001c38 <_WriteBlocking>:
@@ -5032,7 +5032,7 @@ unsigned SEGGER_RTT_ReadNoLock(unsigned BufferIndex, void* pData, unsigned Buffe
  8001eca:	3730      	adds	r7, #48	; 0x30
  8001ecc:	46bd      	mov	sp, r7
  8001ece:	bd80      	pop	{r7, pc}
- 8001ed0:	240052a0 	.word	0x240052a0
+ 8001ed0:	240072a0 	.word	0x240072a0
 
 08001ed4 <SEGGER_RTT_WriteNoLock>:
 *    (1) Data is stored according to buffer flags.
@@ -5164,7 +5164,7 @@ unsigned SEGGER_RTT_WriteNoLock(unsigned BufferIndex, const void* pBuffer, unsig
  8001f6a:	3720      	adds	r7, #32
  8001f6c:	46bd      	mov	sp, r7
  8001f6e:	bd80      	pop	{r7, pc}
- 8001f70:	240052a0 	.word	0x240052a0
+ 8001f70:	240072a0 	.word	0x240072a0
 
 08001f74 <SEGGER_RTT_Write>:
 *    Number of bytes which have been stored in the "Up"-buffer.
@@ -5211,7 +5211,7 @@ unsigned SEGGER_RTT_Write(unsigned BufferIndex, const void* pBuffer, unsigned Nu
  8001fb6:	3720      	adds	r7, #32
  8001fb8:	46bd      	mov	sp, r7
  8001fba:	bd80      	pop	{r7, pc}
- 8001fbc:	240052a0 	.word	0x240052a0
+ 8001fbc:	240072a0 	.word	0x240072a0
 
 08001fc0 <SEGGER_RTT_AllocUpBuffer>:
 *
@@ -5371,7 +5371,7 @@ int SEGGER_RTT_AllocUpBuffer(const char* sName, void* pBuffer, unsigned BufferSi
  80020be:	46bd      	mov	sp, r7
  80020c0:	bd80      	pop	{r7, pc}
  80020c2:	bf00      	nop
- 80020c4:	240052a0 	.word	0x240052a0
+ 80020c4:	240072a0 	.word	0x240072a0
 
 080020c8 <SEGGER_RTT_ConfigDownBuffer>:
 *  Additional information
@@ -5472,7 +5472,7 @@ int SEGGER_RTT_ConfigDownBuffer(unsigned BufferIndex, const char* sName, void* p
  8002156:	3728      	adds	r7, #40	; 0x28
  8002158:	46bd      	mov	sp, r7
  800215a:	bd80      	pop	{r7, pc}
- 800215c:	240052a0 	.word	0x240052a0
+ 800215c:	240072a0 	.word	0x240072a0
 
 08002160 <_EncodeStr>:
 *  Additional information
@@ -5762,7 +5762,7 @@ static void _HandleIncomingPacket(void) {
  80022ee:	46bd      	mov	sp, r7
  80022f0:	bd80      	pop	{r7, pc}
  80022f2:	bf00      	nop
- 80022f4:	2407d360 	.word	0x2407d360
+ 80022f4:	2407f360 	.word	0x2407f360
 
 080022f8 <_TrySendOverflowPacket>:
 *    !=0:  Success, Message sent (stored in RTT-Buffer)
@@ -5908,7 +5908,7 @@ static int _TrySendOverflowPacket(void) {
  80023d2:	46bd      	mov	sp, r7
  80023d4:	bd80      	pop	{r7, pc}
  80023d6:	bf00      	nop
- 80023d8:	2407d360 	.word	0x2407d360
+ 80023d8:	2407f360 	.word	0x2407f360
  80023dc:	e0001004 	.word	0xe0001004
 
 080023e0 <_SendPacket>:
@@ -6301,7 +6301,7 @@ Send:
  8002642:	60d3      	str	r3, [r2, #12]
  8002644:	e010      	b.n	8002668 <_SendPacket+0x288>
  8002646:	bf00      	nop
- 8002648:	2407d360 	.word	0x2407d360
+ 8002648:	2407f360 	.word	0x2407f360
  800264c:	e0001004 	.word	0xe0001004
   } else {
     _SYSVIEW_Globals.EnableState++; // EnableState has been 1, will be 2. Always.
@@ -6375,8 +6375,8 @@ Send:
  80026b2:	3728      	adds	r7, #40	; 0x28
  80026b4:	46bd      	mov	sp, r7
  80026b6:	bd80      	pop	{r7, pc}
- 80026b8:	2407d360 	.word	0x2407d360
- 80026bc:	240052a0 	.word	0x240052a0
+ 80026b8:	2407f360 	.word	0x2407f360
+ 80026bc:	240072a0 	.word	0x240072a0
 
 080026c0 <SEGGER_SYSVIEW_Init>:
 *    The channel is assigned the label "SysView" for client software
@@ -6460,10 +6460,10 @@ void SEGGER_SYSVIEW_Init(U32 SysFreq, U32 CPUFreq, const SEGGER_SYSVIEW_OS_API *
  8002730:	bd80      	pop	{r7, pc}
  8002732:	bf00      	nop
  8002734:	00077c00 	.word	0x00077c00
- 8002738:	24005758 	.word	0x24005758
+ 8002738:	24007758 	.word	0x24007758
  800273c:	08008d10 	.word	0x08008d10
- 8002740:	2407d360 	.word	0x2407d360
- 8002744:	2407d358 	.word	0x2407d358
+ 8002740:	2407f360 	.word	0x2407f360
+ 8002744:	2407f358 	.word	0x2407f358
  8002748:	e0001004 	.word	0xe0001004
 
 0800274c <SEGGER_SYSVIEW_SetRAMBase>:
@@ -6488,7 +6488,7 @@ void SEGGER_SYSVIEW_SetRAMBase(U32 RAMBaseAddress) {
  8002760:	f85d 7b04 	ldr.w	r7, [sp], #4
  8002764:	4770      	bx	lr
  8002766:	bf00      	nop
- 8002768:	2407d360 	.word	0x2407d360
+ 8002768:	2407f360 	.word	0x2407f360
 
 0800276c <SEGGER_SYSVIEW_RecordVoid>:
 *    Formats and sends a SystemView packet with an empty payload.
@@ -6525,7 +6525,7 @@ void SEGGER_SYSVIEW_RecordVoid(unsigned int EventID) {
  800279e:	46bd      	mov	sp, r7
  80027a0:	bd80      	pop	{r7, pc}
  80027a2:	bf00      	nop
- 80027a4:	2407d390 	.word	0x2407d390
+ 80027a4:	2407f390 	.word	0x2407f390
 
 080027a8 <SEGGER_SYSVIEW_RecordU32>:
 *
@@ -6594,7 +6594,7 @@ void SEGGER_SYSVIEW_RecordU32(unsigned int EventID, U32 Value) {
  8002816:	3720      	adds	r7, #32
  8002818:	46bd      	mov	sp, r7
  800281a:	bd80      	pop	{r7, pc}
- 800281c:	2407d390 	.word	0x2407d390
+ 800281c:	2407f390 	.word	0x2407f390
 
 08002820 <SEGGER_SYSVIEW_RecordU32x2>:
 *  Parameters
@@ -6693,7 +6693,7 @@ void SEGGER_SYSVIEW_RecordU32x2(unsigned int EventID, U32 Para0, U32 Para1) {
  80028ca:	46bd      	mov	sp, r7
  80028cc:	bd80      	pop	{r7, pc}
  80028ce:	bf00      	nop
- 80028d0:	2407d390 	.word	0x2407d390
+ 80028d0:	2407f390 	.word	0x2407f390
 
 080028d4 <SEGGER_SYSVIEW_Start>:
 *    When SEGGER_SYSVIEW_CAN_RESTART is 1, each received start command
@@ -6900,9 +6900,9 @@ void SEGGER_SYSVIEW_Start(void) {
  8002a3a:	46bd      	mov	sp, r7
  8002a3c:	bd80      	pop	{r7, pc}
  8002a3e:	bf00      	nop
- 8002a40:	2407d360 	.word	0x2407d360
+ 8002a40:	2407f360 	.word	0x2407f360
  8002a44:	08008d98 	.word	0x08008d98
- 8002a48:	2407d390 	.word	0x2407d390
+ 8002a48:	2407f390 	.word	0x2407f390
 
 08002a4c <SEGGER_SYSVIEW_Stop>:
 *    This function disables transmission of SystemView packets recorded
@@ -6948,8 +6948,8 @@ void SEGGER_SYSVIEW_Stop(void) {
  8002a8a:	46bd      	mov	sp, r7
  8002a8c:	bd80      	pop	{r7, pc}
  8002a8e:	bf00      	nop
- 8002a90:	2407d390 	.word	0x2407d390
- 8002a94:	2407d360 	.word	0x2407d360
+ 8002a90:	2407f390 	.word	0x2407f390
+ 8002a94:	2407f360 	.word	0x2407f360
 
 08002a98 <SEGGER_SYSVIEW_GetSysDesc>:
 *
@@ -7113,8 +7113,8 @@ void SEGGER_SYSVIEW_GetSysDesc(void) {
  8002bbe:	3730      	adds	r7, #48	; 0x30
  8002bc0:	46bd      	mov	sp, r7
  8002bc2:	bd80      	pop	{r7, pc}
- 8002bc4:	2407d390 	.word	0x2407d390
- 8002bc8:	2407d360 	.word	0x2407d360
+ 8002bc4:	2407f390 	.word	0x2407f390
+ 8002bc8:	2407f360 	.word	0x2407f360
 
 08002bcc <SEGGER_SYSVIEW_SendTaskInfo>:
 *    task priority and task name.
@@ -7351,8 +7351,8 @@ void SEGGER_SYSVIEW_SendTaskInfo(const SEGGER_SYSVIEW_TASKINFO *pInfo) {
  8002d86:	46bd      	mov	sp, r7
  8002d88:	bd80      	pop	{r7, pc}
  8002d8a:	bf00      	nop
- 8002d8c:	2407d390 	.word	0x2407d390
- 8002d90:	2407d360 	.word	0x2407d360
+ 8002d8c:	2407f390 	.word	0x2407f390
+ 8002d90:	2407f360 	.word	0x2407f360
 
 08002d94 <SEGGER_SYSVIEW_SendTaskList>:
 *       SEGGER_SYSVIEW_SendTaskList()
@@ -7383,7 +7383,7 @@ void SEGGER_SYSVIEW_SendTaskList(void) {
  8002db2:	bf00      	nop
  8002db4:	bd80      	pop	{r7, pc}
  8002db6:	bf00      	nop
- 8002db8:	2407d360 	.word	0x2407d360
+ 8002db8:	2407f360 	.word	0x2407f360
 
 08002dbc <SEGGER_SYSVIEW_SendSysDesc>:
 *
@@ -7427,7 +7427,7 @@ void SEGGER_SYSVIEW_SendSysDesc(const char *sSysDesc) {
  8002dfa:	46bd      	mov	sp, r7
  8002dfc:	bd80      	pop	{r7, pc}
  8002dfe:	bf00      	nop
- 8002e00:	2407d390 	.word	0x2407d390
+ 8002e00:	2407f390 	.word	0x2407f390
 
 08002e04 <SEGGER_SYSVIEW_RecordSystime>:
 *
@@ -7488,7 +7488,7 @@ void SEGGER_SYSVIEW_RecordSystime(void) {
  8002e5a:	46bd      	mov	sp, r7
  8002e5c:	bd90      	pop	{r4, r7, pc}
  8002e5e:	bf00      	nop
- 8002e60:	2407d360 	.word	0x2407d360
+ 8002e60:	2407f360 	.word	0x2407f360
  8002e64:	e0001004 	.word	0xe0001004
 
 08002e68 <SEGGER_SYSVIEW_RecordEnterISR>:
@@ -7563,7 +7563,7 @@ void SEGGER_SYSVIEW_RecordEnterISR(void) {
  8002ede:	46bd      	mov	sp, r7
  8002ee0:	bd80      	pop	{r7, pc}
  8002ee2:	bf00      	nop
- 8002ee4:	2407d390 	.word	0x2407d390
+ 8002ee4:	2407f390 	.word	0x2407f390
  8002ee8:	e000ed04 	.word	0xe000ed04
 
 08002eec <SEGGER_SYSVIEW_RecordExitISR>:
@@ -7599,7 +7599,7 @@ void SEGGER_SYSVIEW_RecordExitISR(void) {
  8002f1a:	3708      	adds	r7, #8
  8002f1c:	46bd      	mov	sp, r7
  8002f1e:	bd80      	pop	{r7, pc}
- 8002f20:	2407d390 	.word	0x2407d390
+ 8002f20:	2407f390 	.word	0x2407f390
 
 08002f24 <SEGGER_SYSVIEW_RecordExitISRToScheduler>:
 *      18 <TimeStamp>        // Max. packet len is 6
@@ -7634,7 +7634,7 @@ void SEGGER_SYSVIEW_RecordExitISRToScheduler(void) {
  8002f52:	3708      	adds	r7, #8
  8002f54:	46bd      	mov	sp, r7
  8002f56:	bd80      	pop	{r7, pc}
- 8002f58:	2407d390 	.word	0x2407d390
+ 8002f58:	2407f390 	.word	0x2407f390
 
 08002f5c <SEGGER_SYSVIEW_OnIdle>:
 *       SEGGER_SYSVIEW_OnIdle()
@@ -7669,7 +7669,7 @@ void SEGGER_SYSVIEW_OnIdle(void) {
  8002f8a:	3708      	adds	r7, #8
  8002f8c:	46bd      	mov	sp, r7
  8002f8e:	bd80      	pop	{r7, pc}
- 8002f90:	2407d390 	.word	0x2407d390
+ 8002f90:	2407f390 	.word	0x2407f390
 
 08002f94 <SEGGER_SYSVIEW_OnTaskCreate>:
 *    to creating a task in the OS.
@@ -7743,8 +7743,8 @@ void SEGGER_SYSVIEW_OnTaskCreate(U32 TaskId) {
  800300a:	3720      	adds	r7, #32
  800300c:	46bd      	mov	sp, r7
  800300e:	bd80      	pop	{r7, pc}
- 8003010:	2407d390 	.word	0x2407d390
- 8003014:	2407d360 	.word	0x2407d360
+ 8003010:	2407f390 	.word	0x2407f390
+ 8003014:	2407f360 	.word	0x2407f360
 
 08003018 <SEGGER_SYSVIEW_OnTaskStartExec>:
 *    when it is ready to execute.
@@ -7818,8 +7818,8 @@ void SEGGER_SYSVIEW_OnTaskStartExec(U32 TaskId) {
  800308e:	3720      	adds	r7, #32
  8003090:	46bd      	mov	sp, r7
  8003092:	bd80      	pop	{r7, pc}
- 8003094:	2407d390 	.word	0x2407d390
- 8003098:	2407d360 	.word	0x2407d360
+ 8003094:	2407f390 	.word	0x2407f390
+ 8003098:	2407f360 	.word	0x2407f360
 
 0800309c <SEGGER_SYSVIEW_OnTaskStartReady>:
 *    Record a Task Start Ready event.
@@ -7893,8 +7893,8 @@ void SEGGER_SYSVIEW_OnTaskStartReady(U32 TaskId) {
  8003112:	3720      	adds	r7, #32
  8003114:	46bd      	mov	sp, r7
  8003116:	bd80      	pop	{r7, pc}
- 8003118:	2407d390 	.word	0x2407d390
- 800311c:	2407d360 	.word	0x2407d360
+ 8003118:	2407f390 	.word	0x2407f390
+ 800311c:	2407f360 	.word	0x2407f360
 
 08003120 <SEGGER_SYSVIEW_SendModule>:
 *    Sends the information of a registered module to the host.
@@ -8048,8 +8048,8 @@ void SEGGER_SYSVIEW_SendModule(U8 ModuleId) {
  8003212:	46bd      	mov	sp, r7
  8003214:	bd80      	pop	{r7, pc}
  8003216:	bf00      	nop
- 8003218:	2407d388 	.word	0x2407d388
- 800321c:	2407d390 	.word	0x2407d390
+ 8003218:	2407f388 	.word	0x2407f388
+ 800321c:	2407f390 	.word	0x2407f390
 
 08003220 <SEGGER_SYSVIEW_SendModuleDescription>:
 *
@@ -8098,7 +8098,7 @@ void SEGGER_SYSVIEW_SendModuleDescription(void) {
  8003252:	46bd      	mov	sp, r7
  8003254:	bd80      	pop	{r7, pc}
  8003256:	bf00      	nop
- 8003258:	2407d388 	.word	0x2407d388
+ 8003258:	2407f388 	.word	0x2407f388
 
 0800325c <SEGGER_SYSVIEW_SendNumModules>:
 *       SEGGER_SYSVIEW_SendNumModules()
@@ -8166,8 +8166,8 @@ void SEGGER_SYSVIEW_SendNumModules(void) {
  80032ca:	46bd      	mov	sp, r7
  80032cc:	bd80      	pop	{r7, pc}
  80032ce:	bf00      	nop
- 80032d0:	2407d390 	.word	0x2407d390
- 80032d4:	2407d38c 	.word	0x2407d38c
+ 80032d0:	2407f390 	.word	0x2407f390
+ 80032d4:	2407f38c 	.word	0x2407f38c
 
 080032d8 <SEGGER_SYSVIEW_Warn>:
 *    Print a warning string to the host.
@@ -8267,7 +8267,7 @@ void SEGGER_SYSVIEW_Warn(const char* s) {
  8003386:	46bd      	mov	sp, r7
  8003388:	bd80      	pop	{r7, pc}
  800338a:	bf00      	nop
- 800338c:	2407d390 	.word	0x2407d390
+ 800338c:	2407f390 	.word	0x2407f390
 
 08003390 <_write_r>:
 *   Low-level reentrant write function.
@@ -8433,7 +8433,7 @@ int main(void)
  8003476:	bf00      	nop
  8003478:	24000008 	.word	0x24000008
  800347c:	08008d28 	.word	0x08008d28
- 8003480:	2407d474 	.word	0x2407d474
+ 8003480:	2407f474 	.word	0x2407f474
  8003484:	e0001000 	.word	0xe0001000
  8003488:	08008d3c 	.word	0x08008d3c
  800348c:	08008d48 	.word	0x08008d48
@@ -8683,7 +8683,7 @@ static void MX_USART2_UART_Init(void)
 }
  8003600:	bf00      	nop
  8003602:	bd80      	pop	{r7, pc}
- 8003604:	2407d474 	.word	0x2407d474
+ 8003604:	2407f474 	.word	0x2407f474
  8003608:	40004400 	.word	0x40004400
 
 0800360c <MX_GPIO_Init>:
@@ -8837,7 +8837,7 @@ static void Task_Hello_Handler(void* parameters)
  800371e:	e7e9      	b.n	80036f4 <Task_Hello_Handler+0x8>
  8003720:	24000008 	.word	0x24000008
  8003724:	08008d64 	.word	0x08008d64
- 8003728:	2407d474 	.word	0x2407d474
+ 8003728:	2407f474 	.word	0x2407f474
 
 0800372c <Task_World_Handler>:
 		//taskYIELD();
@@ -8876,7 +8876,7 @@ static void Task_World_Handler(void* parameters)
  800375e:	e7e9      	b.n	8003734 <Task_World_Handler+0x8>
  8003760:	24000008 	.word	0x24000008
  8003764:	08008d70 	.word	0x08008d70
- 8003768:	2407d474 	.word	0x2407d474
+ 8003768:	2407f474 	.word	0x2407f474
 
 0800376c <HAL_TIM_PeriodElapsedCallback>:
   * a global variable "uwTick" used as application time base.
@@ -9242,7 +9242,7 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
  800395c:	24000014 	.word	0x24000014
  8003960:	58024400 	.word	0x58024400
  8003964:	431bde83 	.word	0x431bde83
- 8003968:	2407d504 	.word	0x2407d504
+ 8003968:	2407f504 	.word	0x2407f504
  800396c:	40001000 	.word	0x40001000
 
 08003970 <NMI_Handler>:
@@ -9363,7 +9363,7 @@ void TIM6_DAC_IRQHandler(void)
  80039a6:	bf00      	nop
  80039a8:	bd80      	pop	{r7, pc}
  80039aa:	bf00      	nop
- 80039ac:	2407d504 	.word	0x2407d504
+ 80039ac:	2407f504 	.word	0x2407f504
 
 080039b0 <SystemInit>:
   *         configuration.
@@ -9673,7 +9673,7 @@ LoopFillZerobss:
   ldr r2, =_sbss
  8003b10:	24000084 	.word	0x24000084
   ldr r4, =_ebss
- 8003b14:	2407d608 	.word	0x2407d608
+ 8003b14:	2407f608 	.word	0x2407f608
 
 08003b18 <ADC3_IRQHandler>:
  * @retval None
@@ -9800,7 +9800,7 @@ __weak void HAL_IncTick(void)
  8003bb0:	4770      	bx	lr
  8003bb2:	bf00      	nop
  8003bb4:	24000018 	.word	0x24000018
- 8003bb8:	2407d550 	.word	0x2407d550
+ 8003bb8:	2407f550 	.word	0x2407f550
 
 08003bbc <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -9820,7 +9820,7 @@ __weak uint32_t HAL_GetTick(void)
  8003bc8:	f85d 7b04 	ldr.w	r7, [sp], #4
  8003bcc:	4770      	bx	lr
  8003bce:	bf00      	nop
- 8003bd0:	2407d550 	.word	0x2407d550
+ 8003bd0:	2407f550 	.word	0x2407f550
 
 08003bd4 <HAL_GetREVID>:
 /**
@@ -21139,25 +21139,25 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008464:	4801      	ldr	r0, [pc, #4]	; (800846c <__sfp_lock_acquire+0x8>)
  8008466:	f000 b8b3 	b.w	80085d0 <__retarget_lock_acquire_recursive>
  800846a:	bf00      	nop
- 800846c:	2407d555 	.word	0x2407d555
+ 800846c:	2407f555 	.word	0x2407f555
 
 08008470 <__sfp_lock_release>:
  8008470:	4801      	ldr	r0, [pc, #4]	; (8008478 <__sfp_lock_release+0x8>)
  8008472:	f000 b8ae 	b.w	80085d2 <__retarget_lock_release_recursive>
  8008476:	bf00      	nop
- 8008478:	2407d555 	.word	0x2407d555
+ 8008478:	2407f555 	.word	0x2407f555
 
 0800847c <__sinit_lock_acquire>:
  800847c:	4801      	ldr	r0, [pc, #4]	; (8008484 <__sinit_lock_acquire+0x8>)
  800847e:	f000 b8a7 	b.w	80085d0 <__retarget_lock_acquire_recursive>
  8008482:	bf00      	nop
- 8008484:	2407d556 	.word	0x2407d556
+ 8008484:	2407f556 	.word	0x2407f556
 
 08008488 <__sinit_lock_release>:
  8008488:	4801      	ldr	r0, [pc, #4]	; (8008490 <__sinit_lock_release+0x8>)
  800848a:	f000 b8a2 	b.w	80085d2 <__retarget_lock_release_recursive>
  800848e:	bf00      	nop
- 8008490:	2407d556 	.word	0x2407d556
+ 8008490:	2407f556 	.word	0x2407f556
 
 08008494 <__sinit>:
  8008494:	b510      	push	{r4, lr}
@@ -21454,7 +21454,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  800872e:	e7ca      	b.n	80086c6 <_free_r+0x26>
  8008730:	b003      	add	sp, #12
  8008732:	bd30      	pop	{r4, r5, pc}
- 8008734:	2407d558 	.word	0x2407d558
+ 8008734:	2407f558 	.word	0x2407f558
 
 08008738 <sbrk_aligned>:
  8008738:	b570      	push	{r4, r5, r6, lr}
@@ -21482,7 +21482,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  800876c:	f04f 34ff 	mov.w	r4, #4294967295
  8008770:	4620      	mov	r0, r4
  8008772:	bd70      	pop	{r4, r5, r6, pc}
- 8008774:	2407d55c 	.word	0x2407d55c
+ 8008774:	2407f55c 	.word	0x2407f55c
 
 08008778 <_malloc_r>:
  8008778:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
@@ -21586,7 +21586,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008856:	6025      	str	r5, [r4, #0]
  8008858:	e7de      	b.n	8008818 <_malloc_r+0xa0>
  800885a:	bf00      	nop
- 800885c:	2407d558 	.word	0x2407d558
+ 800885c:	2407f558 	.word	0x2407f558
 
 08008860 <_sbrk_r>:
  8008860:	b538      	push	{r3, r4, r5, lr}
@@ -21602,7 +21602,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008876:	b103      	cbz	r3, 800887a <_sbrk_r+0x1a>
  8008878:	6023      	str	r3, [r4, #0]
  800887a:	bd38      	pop	{r3, r4, r5, pc}
- 800887c:	2407d560 	.word	0x2407d560
+ 800887c:	2407f560 	.word	0x2407f560
 
 08008880 <__sread>:
  8008880:	b510      	push	{r4, lr}
@@ -21678,7 +21678,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  800891e:	b103      	cbz	r3, 8008922 <_close_r+0x1a>
  8008920:	6023      	str	r3, [r4, #0]
  8008922:	bd38      	pop	{r3, r4, r5, pc}
- 8008924:	2407d560 	.word	0x2407d560
+ 8008924:	2407f560 	.word	0x2407f560
 
 08008928 <_fstat_r>:
  8008928:	b538      	push	{r3, r4, r5, lr}
@@ -21696,7 +21696,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008942:	6023      	str	r3, [r4, #0]
  8008944:	bd38      	pop	{r3, r4, r5, pc}
  8008946:	bf00      	nop
- 8008948:	2407d560 	.word	0x2407d560
+ 8008948:	2407f560 	.word	0x2407f560
 
 0800894c <_isatty_r>:
  800894c:	b538      	push	{r3, r4, r5, lr}
@@ -21712,7 +21712,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008962:	b103      	cbz	r3, 8008966 <_isatty_r+0x1a>
  8008964:	6023      	str	r3, [r4, #0]
  8008966:	bd38      	pop	{r3, r4, r5, pc}
- 8008968:	2407d560 	.word	0x2407d560
+ 8008968:	2407f560 	.word	0x2407f560
 
 0800896c <_lseek_r>:
  800896c:	b538      	push	{r3, r4, r5, lr}
@@ -21730,19 +21730,19 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008986:	b103      	cbz	r3, 800898a <_lseek_r+0x1e>
  8008988:	6023      	str	r3, [r4, #0]
  800898a:	bd38      	pop	{r3, r4, r5, pc}
- 800898c:	2407d560 	.word	0x2407d560
+ 800898c:	2407f560 	.word	0x2407f560
 
 08008990 <__malloc_lock>:
  8008990:	4801      	ldr	r0, [pc, #4]	; (8008998 <__malloc_lock+0x8>)
  8008992:	f7ff be1d 	b.w	80085d0 <__retarget_lock_acquire_recursive>
  8008996:	bf00      	nop
- 8008998:	2407d554 	.word	0x2407d554
+ 8008998:	2407f554 	.word	0x2407f554
 
 0800899c <__malloc_unlock>:
  800899c:	4801      	ldr	r0, [pc, #4]	; (80089a4 <__malloc_unlock+0x8>)
  800899e:	f7ff be18 	b.w	80085d2 <__retarget_lock_release_recursive>
  80089a2:	bf00      	nop
- 80089a4:	2407d554 	.word	0x2407d554
+ 80089a4:	2407f554 	.word	0x2407f554
 
 080089a8 <_read_r>:
  80089a8:	b538      	push	{r3, r4, r5, lr}
@@ -21760,7 +21760,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  80089c2:	b103      	cbz	r3, 80089c6 <_read_r+0x1e>
  80089c4:	6023      	str	r3, [r4, #0]
  80089c6:	bd38      	pop	{r3, r4, r5, pc}
- 80089c8:	2407d560 	.word	0x2407d560
+ 80089c8:	2407f560 	.word	0x2407f560
 
 080089cc <findslot>:
  80089cc:	4b0a      	ldr	r3, [pc, #40]	; (80089f8 <findslot+0x2c>)
@@ -21783,7 +21783,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  80089f4:	e7fc      	b.n	80089f0 <findslot+0x24>
  80089f6:	bf00      	nop
  80089f8:	2400001c 	.word	0x2400001c
- 80089fc:	2407d568 	.word	0x2407d568
+ 80089fc:	2407f568 	.word	0x2407f568
 
 08008a00 <error>:
  8008a00:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
@@ -21951,7 +21951,7 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008b56:	6023      	str	r3, [r4, #0]
  8008b58:	e7e8      	b.n	8008b2c <_close+0x18>
  8008b5a:	bf00      	nop
- 8008b5c:	2407d568 	.word	0x2407d568
+ 8008b5c:	2407f568 	.word	0x2407f568
 
 08008b60 <_sbrk>:
  8008b60:	4a0d      	ldr	r2, [pc, #52]	; (8008b98 <_sbrk+0x38>)
@@ -21980,8 +21980,8 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8008b92:	bd10      	pop	{r4, pc}
  8008b94:	6013      	str	r3, [r2, #0]
  8008b96:	e7fc      	b.n	8008b92 <_sbrk+0x32>
- 8008b98:	2407d564 	.word	0x2407d564
- 8008b9c:	2407d608 	.word	0x2407d608
+ 8008b98:	2407f564 	.word	0x2407f564
+ 8008b9c:	2407f608 	.word	0x2407f608
  8008ba0:	24000080 	.word	0x24000080
  8008ba4:	cafedead 	.word	0xcafedead
 
