@@ -1,4 +1,4 @@
-08:34:21 **** Incremental Build of configuration Debug for project FreeRTOS_BinarySemaphore_Task ****
+20:35:30 **** Incremental Build of configuration Debug for project FreeRTOS_BinarySemaphore_Task ****
 make -j8 all 
 arm-none-eabi-size   FreeRTOS_BinarySemaphore_Task.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   FreeRTOS_BinarySemaphore_Task.elf
 Finished building: default.size.stdout
  
 
-08:34:21 Build Finished. 0 errors, 0 warnings. (took 237ms)
+20:35:30 Build Finished. 0 errors, 0 warnings. (took 355ms)
 

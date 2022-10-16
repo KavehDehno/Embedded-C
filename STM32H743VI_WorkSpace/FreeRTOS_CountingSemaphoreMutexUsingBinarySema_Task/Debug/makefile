@@ -42,34 +42,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := FreeRTOS_CountingSemaphore_Task
+BUILD_ARTIFACT_NAME := FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-FreeRTOS_CountingSemaphore_Task.elf \
+FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.elf \
 
 MAP_FILES += \
-FreeRTOS_CountingSemaphore_Task.map \
+FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-FreeRTOS_CountingSemaphore_Task.list \
+FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: FreeRTOS_CountingSemaphore_Task.elf secondary-outputs
+main-build: FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.elf secondary-outputs
 
 # Tool invocations
-FreeRTOS_CountingSemaphore_Task.elf FreeRTOS_CountingSemaphore_Task.map: $(OBJS) $(USER_OBJS) D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\FreeRTOS_CountingSemaphore_Task\STM32H743VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "FreeRTOS_CountingSemaphore_Task.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\FreeRTOS_CountingSemaphore_Task\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_CountingSemaphore_Task.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.elf FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.map: $(OBJS) $(USER_OBJS) D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task\STM32H743VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -78,14 +78,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-FreeRTOS_CountingSemaphore_Task.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "FreeRTOS_CountingSemaphore_Task.list"
+FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) FreeRTOS_CountingSemaphore_Task.elf FreeRTOS_CountingSemaphore_Task.list FreeRTOS_CountingSemaphore_Task.map default.size.stdout
+	-$(RM) FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.elf FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.list FreeRTOS_CountingSemaphoreMutexUsingBinarySema_Task.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

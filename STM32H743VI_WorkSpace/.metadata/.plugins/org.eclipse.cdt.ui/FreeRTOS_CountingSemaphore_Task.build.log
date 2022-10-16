@@ -1,30 +1,10 @@
-07:04:49 **** Incremental Build of configuration Debug for project FreeRTOS_CountingSemaphore_Task ****
+20:35:32 **** Incremental Build of configuration Debug for project FreeRTOS_CountingSemaphore_Task ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS" -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/include" -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM7" -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/FreeRTOS/portable/GCC/ARM_CM7/r0p1" -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER" -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/Config" -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/OS" -I"D:/Documents/FreeRTOS/RTOS_Workspace/STM32H743VI/STM32H743VI_WorkSpace/Common/ThirdParty/SEGGER/SEGGER" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'vTask1':
-../Core/Src/main.c:425:13: warning: unused variable 'Flag' [-Wunused-variable]
-  425 |  static int Flag = 1;
-      |             ^~~~
-../Core/Src/main.c: In function 'vTask2':
-../Core/Src/main.c:456:13: warning: unused variable 'Flag' [-Wunused-variable]
-  456 |  static int Flag = 1;
-      |             ^~~~
-At top level:
-../Core/Src/main.c:456:13: warning: 'Flag' defined but not used [-Wunused-variable]
-../Core/Src/main.c:425:13: warning: 'Flag' defined but not used [-Wunused-variable]
-  425 |  static int Flag = 1;
-      |             ^~~~
-arm-none-eabi-gcc -o "FreeRTOS_CountingSemaphore_Task.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\FreeRTOS_CountingSemaphore_Task\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_CountingSemaphore_Task.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: FreeRTOS_CountingSemaphore_Task.elf
- 
 arm-none-eabi-size   FreeRTOS_CountingSemaphore_Task.elf 
-arm-none-eabi-objdump -h -S  FreeRTOS_CountingSemaphore_Task.elf  > "FreeRTOS_CountingSemaphore_Task.list"
    text	   data	    bss	    dec	    hex	filename
   53128	    140	 522124	 575392	  8c7a0	FreeRTOS_CountingSemaphore_Task.elf
 Finished building: default.size.stdout
  
-Finished building: FreeRTOS_CountingSemaphore_Task.list
- 
 
-07:04:50 Build Finished. 0 errors, 4 warnings. (took 1s.221ms)
+20:35:33 Build Finished. 0 errors, 0 warnings. (took 1s.22ms)
 
