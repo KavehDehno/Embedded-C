@@ -1,0 +1,127 @@
+FREE RTOS notes:
+- Code hangs if USART messages being sent between tasks and task schedular
+- For SEGGER view use first check the version of SEGGER view, then download the same version of FreeRTOS
+- Include #include "SEGGER_SYSVIEW_FreeRTOS.h"  in FreeRTOSConfig.h at the buttom
+- Include bellow in FreeRTOSConfig.h
+	- #define INCLUDE_xTaskGetIdleTaskHandle			1
+	- #define INCLUDE_pxTaskGetStackStart				1
+
+- In FreeRTOSConfig.h change bellow to 0
+#define configUSE_MALLOC_FAILED_HOOK			0
+#define configUSE_TICK_HOOK						0
+#define configCHECK_FOR_STACK_OVERFLOW			0
+#define configCPU_CLOCK_HZ						( 64000000 )
+
+
+- Change bellow in SEGGER_SYSVIEW_FreeRTOS.c
+
+#define SYSVIEW_APP_NAME        "FreeRTOS Hello_World Application"
+// The target device name
+#define SYSVIEW_DEVICE_NAME     "STM32H743VI"
+
+
+
+----------------------
+
+- In FreeRTOSConfig.h comment out bellow
+/* Prevent the inclusion of items the assembler will not understand in assembly
+files. */
+#if 0
+#ifndef __IAR_SYSTEMS_ASM__
+
+	/* Library includes. */
+	#include "stm32h7xx_hal.h"
+
+	extern uint32_t SystemCoreClock;
+
+	/* Normal assert() semantics without relying on the provision of an assert.h
+	header file. */
+	extern void vAssertCalled( uint32_t ulLine, const char *pcFile );
+	#define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled( __LINE__, __FILE__ )
+
+#endif /* __IAR_SYSTEMS_ASM__ */
+#endif
+
+If patch didn't work
+***************************************************************************
+
+
+
+
+
+
+
+
+Common Compile time Errors
+***************************************************************************
+- Used this for printing messages in SEGGER View : SEGGER_SYSVIEW_Print()
+- undefined reference to `vInitPrioGroupValue': Patch not implemented properly. Copy vInitPrioGroupValue function from patch file and paste in port.c
+- implicit declaration of function SEGGER_UART_init: add extern void SEGGER_UART_init(U32 baud); in main.c
+- implicit declaration of function 'vInitPrioGroupValue' : add #include "FreeRTOS.h" in the same msp file. suggestion: void vInitPrioGroupValue(void); in stm32h7xx_hal_msp.c
+- FreeRTOS.h: No such file or directory: Add FreeRTOS include & GCC folders to path under Project settings/c/c++ build/Settings/MCU GCC Compiler/Include path
+- SEGGER_RTT_Conf.h: No such file or directory: include path to Thirdparty/Segger/config
+- portmacro.h: No such file or directory: Add FreeRTOS GCC/ARM_CM7/r0p1 to path under Project settings/c/c++ build/Settings/MCU GCC Compiler/Include path
+- undefined reference to `SEGGER_UART_init': Make sure SEGGER files are not excluuded from project, Make sure path to SEGGER and SEGGER config is set
+- `SVC_Handler' or `PendSV_Handler' or `SysTick_Handler':  	first defined here:::	
+- first defined here: 
+
+
+
+All bellow errors: Used FreeRTOS202012.00 with SEGGER System View 330 and applied patch FreeRTOSv202012.00_segger_cm7_v1
+- macro "traceTASK_NOTIFY_TAKE" passed 1 arguments, but takes just 0
+- 'traceTASK_NOTIFY_TAKE' undeclared (first use in this function)
+- macro "traceTASK_NOTIFY_WAIT" passed 1 arguments, but takes just 0
+- 'traceTASK_NOTIFY_WAIT' undeclared (first use in this function)
+- macro "traceTASK_NOTIFY" passed 1 arguments, but takes just 0
+- 'traceTASK_NOTIFY_GIVE_FROM_ISR' undeclared (first use in this function)
+
+
+
+
+
+
+
+To Do when Creating new project
+***************************************************************************
+- Import path settings from: G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace
+- Copy FreeRTOSConfig.h to Core/Inc
+- Uncheck Exclude resource from build - ThirdParty/FreeRTOS
+- Uncheck Exclude resource from build - ThirdParty/SEGGER/Config
+- Uncheck Exclude resource from build - ThirdParty/SEGGER/os
+- Uncheck Exclude resource from build - ThirdParty/SEGGER/SEGGER
+- Uncheck Exclude resource from build - ThirdParty/Recorder
+- Uncheck Exclude resource from build - ThirdParty/FreeRTOS
+- Uncheck Exclude resource from build - ThirdParty/FreeRTOS/include
+- Uncheck Exclude resource from build - ThirdParty/FreeRTOS/portable/GCC/Arm_CM7
+- Uncheck Exclude resource from build - ThirdParty/FreeRTOS/portable/GCC/Arm_CM7/r0p1
+- Change project specific settings in SEGGER_SYSVIEW_ConfigDefaults.h & SEGGER_SYSVIEW_Config_FreeRTOS.c
+
+
+
+
+
+_________________________________________________
+Include path
+    <language id="org.eclipse.cdt.core.assembly" name="s,S">
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\Config</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER</includepath>
+    </language>
+    <language id="org.eclipse.cdt.core.gcc" name="C Source File">
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\FreeRTOS</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\FreeRTOS\include</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\FreeRTOS\portable\GCC\ARM_CM7</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\FreeRTOS\portable\GCC\ARM_CM7\r0p1</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\Config</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\OS</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\SEGGER\SEGGER</includepath>
+      <includepath>G:\My Drive\Transfer\Proj\FreeRTOS\RTOS_Workspace\Common\ThirdParty\Recorder</includepath>
+	  
+	  
+	  
+	  
+Common run time problems
+***************************************************************************	  
+UART handler is not called in SEGGER_UART segger print f
+  
+
+

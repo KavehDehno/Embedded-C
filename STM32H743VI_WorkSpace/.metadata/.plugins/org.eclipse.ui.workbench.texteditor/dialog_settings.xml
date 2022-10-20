@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="FDCAN_Rx_Fifo0_Interrupts"/>
+		<item key="selection" value="FDCAN_Rx_location"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="FDCAN_Rx_location"/>
+			<item value="RxBuffersNbr"/>
+			<item value="FDCAN_operating_mode"/>
 			<item value="FDCAN_Rx_Fifo0_Interrupts"/>
 			<item value="FDCAN_Interrupts"/>
-			<item value="FDCAN_operating_mode"/>
 			<item value="FDCAN_txFifoQueue_Mode"/>
 			<item value="usr_msg"/>
 			<item value="heap"/>
@@ -21,8 +23,6 @@
 			<item value="while (1)"/>
 			<item value="lenghtght"/>
 			<item value="len"/>
-			<item value="sRtcMenu"/>
-			<item value="curr_state"/>
 		</list>
 		<list key="replacehistory">
 			<item value="lenght"/>
