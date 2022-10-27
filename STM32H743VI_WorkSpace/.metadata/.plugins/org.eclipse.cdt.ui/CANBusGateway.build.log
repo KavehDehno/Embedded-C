@@ -1,16 +1,10 @@
-21:10:21 **** Incremental Build of configuration Debug for project CANBusGateway ****
+08:12:48 **** Incremental Build of configuration Debug for project CANBusGateway ****
 make -j8 all 
-arm-none-eabi-gcc -o "CANBusGateway.elf" @"objects.list"   -mcpu=cortex-m7 -T"D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\CANBusGateway\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CANBusGateway.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CANBusGateway.elf
- 
 arm-none-eabi-size   CANBusGateway.elf 
-arm-none-eabi-objdump -h -S  CANBusGateway.elf  > "CANBusGateway.list"
    text	   data	    bss	    dec	    hex	filename
-  55844	    156	 500868	 556868	  87f44	CANBusGateway.elf
+  56080	    156	 500868	 557104	  88030	CANBusGateway.elf
 Finished building: default.size.stdout
  
-Finished building: CANBusGateway.list
- 
 
-21:10:22 Build Finished. 0 errors, 0 warnings. (took 825ms)
+08:12:49 Build Finished. 0 errors, 0 warnings. (took 331ms)
 

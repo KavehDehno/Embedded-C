@@ -1,0 +1,30 @@
+!SESSION 2022-10-23 17:05:41.238 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-23 17:06:24.392
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-23 17:06:24.433
+!MESSAGE Log4j initialized with config file D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-23 17:06:26.611
+!MESSAGE Started RMI Server, listening on port 41338
+!SESSION 2022-10-23 17:09:16.290 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-23 17:09:19.642
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-23 17:09:19.683
+!MESSAGE Log4j initialized with config file D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-23 17:09:22.329
+!MESSAGE Started RMI Server, listening on port 41338
