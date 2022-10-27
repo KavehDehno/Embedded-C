@@ -42,34 +42,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := CANBusGateway
+BUILD_ARTIFACT_NAME := CANBusGateway_2CANFD
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-CANBusGateway.elf \
+CANBusGateway_2CANFD.elf \
 
 MAP_FILES += \
-CANBusGateway.map \
+CANBusGateway_2CANFD.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-CANBusGateway.list \
+CANBusGateway_2CANFD.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: CANBusGateway.elf secondary-outputs
+main-build: CANBusGateway_2CANFD.elf secondary-outputs
 
 # Tool invocations
-CANBusGateway.elf CANBusGateway.map: $(OBJS) $(USER_OBJS) D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\CANBusGateway\STM32H743VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "CANBusGateway.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\CANBusGateway\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CANBusGateway.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+CANBusGateway_2CANFD.elf CANBusGateway_2CANFD.map: $(OBJS) $(USER_OBJS) D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\CANBusGateway_2CANFD\STM32H743VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "CANBusGateway_2CANFD.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Documents\FreeRTOS\RTOS_Workspace\STM32H743VI\STM32H743VI_WorkSpace\CANBusGateway_2CANFD\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CANBusGateway_2CANFD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -78,14 +78,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-CANBusGateway.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "CANBusGateway.list"
+CANBusGateway_2CANFD.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "CANBusGateway_2CANFD.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) CANBusGateway.elf CANBusGateway.list CANBusGateway.map default.size.stdout
+	-$(RM) CANBusGateway_2CANFD.elf CANBusGateway_2CANFD.list CANBusGateway_2CANFD.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
